@@ -1,0 +1,60 @@
+<section class="login py-5 mylogs">
+    <div class="container">
+        <div class="row g-0 myrow">
+            <div class="col-lg-5">
+  <img src="./assets/images/login.jpg"  class="demo-bg" >
+   <h1 class="innertext">Welcome to ICHATINSTANT </h1>
+  </div>
+  <div class="col-lg-7 text-center py-4">
+  <div class="dives">
+      <div class="row">
+          <div class="col-lg-25 loginmargin"  style="margin-right:35%; margin-left:5%;">
+          <form action="" class="form-horizontal" id="myform" [formGroup]="loginForm" (ngSubmit)="login();">
+            <div class="form-row">
+              <div class="form-group col-md-8" style= "margin-left:15%;">
+                <h1>{{title}}</h1>
+                </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group  col-lg-8" style= "margin-left:15%;">  
+                    <label for="input" style="color:black;">Email</label>
+                      
+                     
+                    <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email id" [class.is-invalid]="loginForm.get('email')?.hasError('email') || loginForm.get('email')?.hasError('pattern')" formControlName="email" >
+                    
+                    <label for="error1" id="error1" *ngIf="loginForm.get('email')?.hasError('required')">Email cannot be empty</label>
+                    <label for="error1" id="error2" *ngIf="loginForm.get('email')?.hasError('email')">Enter valid email</label>
+                  </div>
+                </div>
+                  <br>
+                <div class="form-row">
+                  <div class="form-group col-lg-8" style= "margin-left:15%;">   
+                    <label for="input" style="color:black;">Password</label>
+                    <div class="input-group" id="one">   
+                      
+                    <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="inputPassword4" name="password" formControlName="password" [class.is-invalid]="loginForm.get('password')?.hasError('required') || loginForm.get('password')?.hasError('pattern')" placeholder="Password">
+                    <div class="input-group-append">
+                      <span class="input-group-text" (click)="password_show_hide();">
+                    <i class="fas fa-eye icons" [hidden]="showPassword" id="show_eye" style="height:24px;"></i>
+                        <i class="fas fa-eye-slash icons" [hidden]="!showPassword" id="hide_eye" style="height:24px;"></i>
+                        </span>
+               </div>
+               </div>
+               <label for="error1" id="error1" *ngIf="loginForm.get('password')?.hasError('required')">Password cannot be empty</label>
+                   <label for="error2" id="error2" *ngIf="loginForm.get('password')?.hasError('pattern')" style=" margin-left: -25px;"><h6 style="font-size: 14px; text-align: justify;">Your password should be more than 8 characters <br> and have one small case, one upper case, <br> one number and a special character.</h6></label>
+                   <label  style=" color: white; margin-left: -25px;"><h6 style="font-size: 16px; color:orange; font-weight: bold;">{{error}}</h6></label>
+                  </div>
+                </div> 
+                  <div class="form-row">
+                    <div class="form-group col-md-8" style= "margin-left:15%;"> 
+                  <button type="submit" class="btn btn-primary" [disabled]='!(loginForm.valid && loginForm.dirty)' id="myButton">Login</button>
+                </div>
+              </div>
+                  </form>
+      </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </section>

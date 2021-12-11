@@ -1,0 +1,59 @@
+.chats{
+    background-image: url('../../assets/images/chatroom.jpg');
+    height:100vh;
+    position: relative;
+    background-size: cover;
+}
+.mybuttons{
+    position: absolute;
+color:rgb(36, 36, 54);
+width:30%;
+top:30%;
+left:2%;
+font-size:50px;
+font-weight:bold;
+border-radius: 12px;
+}
+.mybuttons1{
+    position: absolute;
+color:rgb(36, 36, 54);
+width:30%;
+top:30%;
+
+font-size:50px;
+font-weight:bold;
+border-radius: 12px;
+}
+.mybuttons2{
+    position: absolute;
+color:rgb(36, 36, 54);
+width:30%;
+top:70%;
+
+font-size:50px;
+font-weight:bold;
+border-radius: 12px;
+}
+.mybuttons:hover {
+    background-color:rgb(45, 45, 66); /* Green */
+    color: white;
+  }
+  .mybuttons1:hover {
+    background-color:rgb(45, 45, 66); /* Green */
+    color: white;
+  }
+  .mybuttons2:hover {
+    background-color:rgb(45, 45, 66); /* Green */
+    color: white;
+  }
+ ul{
+     list-style: none;
+     font-size: larger;
+ }
+ .dot {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(83, 83, 83);
+    border-radius: 50%;
+    display: inline-block;
+  }

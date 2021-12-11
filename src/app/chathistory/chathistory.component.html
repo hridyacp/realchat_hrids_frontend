@@ -1,0 +1,13 @@
+<div>
+    <h1>Chat Room 1</h1>
+   <table>
+      
+       <tr *ngFor="let history of history">
+           <td>{{history.date}}</td>
+           <td>{{history.month}}</td>
+           <td> {{history.time}}</td>
+           <td>{{history.name}} </td>
+           <td> {{history.message}}</td>
+       </tr>
+   </table>
+</div>

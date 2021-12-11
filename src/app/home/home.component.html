@@ -1,0 +1,19 @@
+<div class="page-wrap"> 
+    <div class="row">
+        <div class="col-md-12  text-center" style="margin-top: 5%; position:absolute;">
+      <h1>ICHATINSTANT</h1>
+      <p class="lead" style="font-weight:bold;">Welcome to ICHATINSTANT! Share moments share messaging!! </p>
+      <div>
+        <a class="btn btn-primary" [routerLink]="['/signup']" *ngIf="!(_auth.loggedIn())">Register</a>
+        <span style="margin-left:4px; margin-right:4px;" *ngIf="!(_auth.loggedIn())">or</span>
+        <a class="btn btn-info" [routerLink]="['/login']" *ngIf="!(_auth.loggedIn())">Login</a>
+      </div>
+  <br>
+      <div>
+        <a class="btn btn-primary" [routerLink]="['/chat']" *ngIf="(_auth.loggedIn())">Chat Room</a>
+      </div>
+    </div>
+</div>
+    
+  </div>
+  

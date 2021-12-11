@@ -1,0 +1,70 @@
+<div class="mysign">
+<div class="dives">
+    <h1 style="margin-left:50%;">{{title}}</h1>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-lg-25 loginmargin">
+        <form method="POST" action="" id="myforms1" #signup='ngForm' (ngSubmit)='signUp()'>
+          <div class="form-row">
+              <div class="form-group col-md-10" style="margin-left:2%">
+                <label class="heads" for="flname"  style="color:black;">Username</label>
+                <input type="text" class="form-control" name="lname" id="lastname" #lname='ngModel' [(ngModel)]='signupItem.lname' pattern='^([A-Za-z]+)?$' [class.is-invalid]='lname.invalid && (lname.dirty || lname.touched )' placeholder="Last Name" required>
+                
+                <label [class.d-none]='lname.dirty || lname.untouched'>User name cannot be empty</label>
+                <label for="error1" id="error1" [class.d-none]='lname.valid || lname.untouched'>Please enter a valid user name</label>
+              </div>
+          </div>
+            <div class="form-row">
+              <div class="form-group col-md-10" style="margin-left:2%">
+              <label class="heads" for="email"  style="color:black;">Email</label>  
+             
+              <input type="email" class="form-control" name="email" id="inputEmail4" [(ngModel)]='signupItem.email' #email='ngModel' pattern='^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}$' [class.is-invalid]='email.invalid && (email.dirty || email.touched )' placeholder="Email Id" required>
+            <label [class.d-none]='email.dirty || email.untouched'>Email cannot be empty</label>
+              <label for="error3" id="error3" [class.d-none]='email.valid || email.untouched'>Please enter a valid email</label>
+              <label style=" color: white; margin-left: -25px;"><h6 style="font-size: 16px; color:orange; font-weight: bold;">{{error}}</h6></label>
+            </div>
+          </div>
+            <div class="form-row">
+              <div class="form-group col-md-10" style="margin-left:2%">
+                <label class="heads" for="pwd"  style="color:black;">Password</label>
+                <div class="input-group" id="one">
+                <input  [type]="showPassword ? 'text' : 'password'" class="form-control" name="password" [(ngModel)]='signupItem.password' #password='ngModel' pattern='(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}' [class.is-invalid]='password.invalid && (password.dirty || password.touched )' id="inputPassword41" placeholder="Enter password" required>
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="eight" (click)="password_show_hide();">
+                      <i class="fas fa-eye" [hidden]="showPassword" id="show_eyes" style="height:24px;"></i>
+                      <i class="fas fa-eye-slash" [hidden]="!showPassword" id="hide_eyes" style="height:24px;"></i>
+                    </span>
+                </div>
+                </div>
+                </div>
+                  <label for="error5" id="error5" [class.d-none]='password.dirty || password.untouched'>Please enter password</label>
+                  <label class="help-block" [class.d-none]='password.valid || password.untouched' style="color:red; font-size: medium; margin-right:5%;"><br>Your password should be more than 8 characters and <br> have one small case, one upper case, <br> one number and a special character.</label>
+                </div>
+          <div class="form-row">
+              <div class="form-group col-md-10" style="margin-left:2%">
+                <label class="heads" for="confirmpwd"  style="color:black;">Confirm Password</label>
+                <div class="input-group" id="one">
+                <input  [type]="showConfirmPassword ? 'text' : 'password'" class="form-control" name="confirmpwd"  appConfirmEqualValidator="password" [(ngModel)]='signupItem.confirmpwd' #confirmpwd='ngModel' ngvalidateEqual="password" [class.is-invalid]='confirmpwd.invalid && (confirmpwd.dirty || confirmpwd.touched )' id="inputPassword41" placeholder="Re-enter password" required>
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="eight" (click)="password_show_hide1();">
+                      <i class="fas fa-eye" [hidden]="showConfirmPassword" id="show_eyes" style="height:24px;"></i>
+                      <i class="fas fa-eye-slash" [hidden]="!showConfirmPassword" id="hide_eyes" style="height:24px;"></i>
+                    </span>
+                </div>
+                </div>
+                </div>
+                  <label for="error5" id="error5" [class.d-none]='confirmpwd.dirty || confirmpwd.untouched'>Please confirm password</label>
+                  <span class="help-block" *ngIf="confirmpwd.errors?.notEqual && confirmpwd.touched" style="color:red; font-size: medium;">Password Mismatch</span>
+                </div>
+                <br>
+                <div class="form-row">
+                  <div class="form-group col-md-10">
+          <button  type="submit" class="btn btn-primary" style="margin-left:50%;" [disabled]='!(signup.valid && signup.dirty)'>Sign up</button>
+        </div>
+        </div>
+        </form>
+  </div>
+  <div class="col-md-2"></div>
+  </div>
+      </div>
+    </div>

@@ -1,0 +1,12 @@
+h1{
+    text-align:center;
+}
+table{
+    margin-left:3%;
+}
+td {
+    padding: 0 3px;
+  }
+  td:nth-child(3){
+      padding: 0 8px;
+  }

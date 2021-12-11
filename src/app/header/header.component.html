@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fill ">
+    <img src="../assets/images/logo.png">
+            <ul class="navbar-nav ml-auto">
+              <li><a class="navbar-brand" routerLink="/">Home</a></li>
+            <li>  <a class="navbar-brand" routerLink="/chat" *ngIf="(_auth.loggedIn())">Chat Room</a></li>
+            <!-- <li>  <a class="navbar-brand" routerLink="/privatechat" *ngIf="(_auth.loggedIn())">Chat</a></li> -->
+             <li><a class="navbar-brand" routerLink="/login" *ngIf="!(_auth.loggedIn())">Login</a></li>
+             <li><a class="navbar-brand" routerLink="/signup" *ngIf="!(_auth.loggedIn())">Register</a></li>
+             <li><a class="navbar-brand" (click)="logoutUser()" *ngIf="(_auth.loggedIn())">Logout</a></li>
+            </ul>
+    </nav>

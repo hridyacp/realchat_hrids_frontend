@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-8 chats">
+        <div class="row">
+            <div class="col-md-12" style="margin-left:20%; margin-top:20%;">
+    <button class="mybuttons" (click)='getChatroom()'>Chat Room</button>
+</div>  
+</div>
+
+</div>
+<div class="col-md-4">
+    <h2>Contacts</h2>
+    <ul *ngFor="let users of userlist" >
+        <div class="row">
+         <div class="col-md-1" *ngIf="useremail!==users.email" style="margin-left:0%; margin-top:2%;padding:0;">
+                       <div *ngIf="users.online=='yes'">
+             <span class="dot" style="background-color: green;"></span>
+         </div>
+             <div *ngIf="users.online=='no'">
+             <span class="dot"></span>
+         </div>
+     </div>
+            <div class="col-md-2" *ngIf="useremail!==users.email" style="margin-left:0%; padding:0;">
+ 
+                <img src="./assets/images/avatar.jpg" style="width:40px; height:40px; border-radius:50%; margin-left:10%;">
+            </div>
+<div class="col-md-9" style="margin:0; padding:0;">
+    <li *ngIf="useremail!==users.email" style="margin-right:5%;">
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{users.lname}}
+              </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+             <div *ngIf="!(blockedusers.includes(users._id))"> <a class="dropdown-item" (click)="getUsername(users)">Chat</a></div>
+            </div>
+          </div>
+    </li>
+    </div>
+ </div>
+</ul>
+</div>
+</div>

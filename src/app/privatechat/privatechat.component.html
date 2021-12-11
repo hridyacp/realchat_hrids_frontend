@@ -1,0 +1,126 @@
+<!-- <div class="row"> 
+    <div class="col-md-3">
+        <h2>Contacts</h2>
+        <ul *ngFor="let users of userlist" >
+            <div class="row">
+             <div class="col-md-1" *ngIf="useremail!==users.email" style="margin-left:0%; margin-top:2%;padding:0;">
+                           <div *ngIf="users.online=='yes'">
+                 <span class="dot" style="background-color: green;"></span>
+             </div>
+                 <div *ngIf="users.online=='no'">
+                 <span class="dot"></span>
+             </div>
+         </div>
+                <div class="col-md-2" *ngIf="useremail!==users.email" style="margin-left:0%; padding:0;">
+     
+                    <img src="./assets/images/avatar.jpg" style="width:40px; height:40px; border-radius:50%; margin-left:10%;">
+                </div>
+    <div class="col-md-9" style="margin:0; padding:0;">
+        <li *ngIf="useremail!==users.email" style="margin-right:5%;">
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{users.lname}}
+                  </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <div *ngIf="!(blockedusers.includes(users._id))"> <a class="dropdown-item" (click)="getUsername(users)">Chat</a></div>
+                 <div *ngIf="!(blockedusers.includes(users._id))&& !(muteuser.includes(users._id))"><a class="dropdown-item" (click)="getMute(users)">Mute</a></div>
+                 <div *ngIf="!(blockedusers.includes(users._id))"><a class="dropdown-item" (click)="getBlock(users)">Block</a></div>
+                 <div *ngIf="(blockedusers.includes(users._id))"><a class="dropdown-item" (click)="getUnblock(users)">Unblock</a></div>
+                 <div *ngIf="!(blockedusers.includes(users._id)) && (muteuser.includes(users._id))"><a class="dropdown-item" (click)="getUnmute(users)">Unmute</a></div>
+                </div>
+              </div>
+        </li>
+        </div>
+     </div>
+    </ul>
+ </div>-->
+ 
+    <!-- 
+
+<div class="col-md-9">
+<div style="width:80%;margin-left:auto;margin-right:auto" class="alert alert-info">  
+    <div> Welcome to chat application created by your network id: {{socketId}} </div>  
+    <div class="alert alert-success" style="height:380px;overflow-y:auto" #chatwindow>  
+      
+        <div *ngFor="let messageh of userhistory" class="alert" [ngClass]="(useremail==messageh.email)? 'sent-chat alert-info':'received-chat alert-warning'">  
+               <div *ngIf="messageh.message==':)'"><span class="badge">{{messageh.from}}</span> <i class="fa fa-smile-o" aria-hidden="true"></i></div> 
+               <div *ngIf="messageh.message==':)'"><span class="badge">{{messageh.to}}</span> <i class="fa fa-smile-o" aria-hidden="true"></i></div>   
+               <div *ngIf="(messageh.message!=':)') || (messageh.message!='')"> <span class="badge" >{{messageh.time}} {{messageh.date}} {{messageh.from}}</span> {{messageh.message}}</div> 
+               <div *ngIf="(messageh.message!=':)') || (messageh.message!='')"> <span class="badge" >{{messageh.time}} {{messageh.date}} {{messageh.to}}</span> {{messageh.message}}</div>   
+</div>
+        <div *ngFor="let message of messages" class="alert" [ngClass]="(useremail==message.email)? 'sent-chat alert-info':'received-chat alert-warning'">  
+         <div *ngIf="!(blockedusers.includes(message.receiver) || blockedusers.includes(message.senderID))">
+            <div *ngIf="message.text==':)'"><span class="badge">{{message.from}}</span> <i class="fa fa-smile-o" aria-hidden="true"></i></div>  
+            <div *ngIf="message.text!=':)'"> <span class="badge" >{{message.from}}</span> {{message.text}}</div>
+        </div>  
+    </div>
+        <div *ngFor="let messageimg of imagetr" class="alert" [ngClass]="(useremail==messageimg.email)? 'sent-chat alert-info':'received-chat alert-warning'">  
+            <div *ngIf="!(blockedusers.includes(messageimg.receiver) || blockedusers.includes(messageimg.senderID))">
+            <div><span class="badge">{{messageimg.from}}</span>   <img src={{messageimg.textimg}} class="img-fluid rounded float-start border border-dark" alt="" style="width: 180px; height: 150px; margin-top: 5%;"></div>  
+    </div>
+    </div>
+    </div>  
+    <div  style="margin-left:auto; ">
+    <div class="alert alert-success "> <textarea rows="4 " [(ngModel)]="message" (keydown.enter)="sendMessage();false;"  style="width:100% "></textarea> <button (click)="sendSmily() " class="btn btn-default" style="margin-left:auto; "><i class="fa fa-smile-o" aria-hidden="true"></i></button> </div>  
+
+        <input type="file" id="myFile" name="image"  id="image1" (change)='submitImage($event)' accept="image/*" id="validationDefault04">  <button (click)="sendImage() " class="btn btn-default" style="margin-left:auto; ">Send</button>         
+        </div>
+    
+</div> 
+</div>
+</div> -->
+
+<div class="col-md-9">
+    <br>
+    <div class="row">
+        <span><h5>Start a personal chat with {{userItem.lname}}</h5> <br> <button id="join"  style="margin-bottom:2%;" (click)="createRoom()">Join</button></span> <br>
+        <button type="button" class="btn btn-danger" style="width:100px" id="block" (click)="blockContact()" >Block</button>
+        <button type="button" class="btn btn-primary" style="width:100px;" id="unblock" (click)="unblockContact()" >UnBlock</button>
+        <button type="button" class="btn btn-danger" style="width:100px" id="mute" (click)="getMute(userItem)" >Mute</button>
+        <button type="button" class="btn btn-primary" style="width:100px;" id="unmute" (click)="getUnmute(userItem)" >UnMute</button>
+                 <div class="well" style="height:200px; padding:15px; margin-top:2%; overflow: auto">
+                    <div *ngFor="let item of chatHistory ">
+                        <span><strong>{{item.user}} : </strong> <a style="text-decoration: none;" (click)="forwardMsg(item)">{{item.message}}</a> </span><br>
+                        {{item.month}} {{item.date}} {{item.time}}<br>
+                        <div *ngIf="item.imgfile!=undefined">
+                            <a>   <span><strong>{{item.user}} :</strong> <img [src]="item.imgfile" (click)="forwardImgs(item)" style="width:100px;height:100px"></span></a>
+                        </div>
+                        </div>
+                     <div *ngFor="let item of messageArray">
+                     <span><strong>{{item.user}} : </strong> <a style="text-decoration: none;" (click)="forwardMsg(item)">{{item.message}}</a></span>
+                     <div *ngIf="item.image!=undefined">
+                        <a>   <span><strong>{{item.user}} :</strong> <img [src]="item.image" (click)="forwardImg(item)" style="width:100px;height:100px"></span></a>
+                    </div>
+                    </div>
+                 </div>
+         </div>
+     
+      <div class="row">
+         <div class="col-sm-10">
+             <input type="text" class="form-control" [(ngModel)]="messageText">            
+         </div>
+         <div class="col-sm-2">
+    <button type="button" class="btn btn-success pull-right" id="send" (click)="sendMessage()">Send</button>
+                 <button type="button" class="btn btn-dangerdefault" >Leave</button>
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-sm-10">
+             <input type="file"  name="image" class="form-control col'sm-6" id="input" (change)="onFileSelected($event)"  required accept="image/*" style="font-family:cursive;">          
+         </div>
+         <div class="col-sm-2">
+                 <button type="button" class="btn btn-success pull-right" id="send" (click)="sendImage()">Send Image</button>
+                
+         </div>
+     </div>
+     <!-- <div class="row"> 
+         <button class="btn btn-success pull-left" style="width:100px"(click)="viewChatHis()">Chats</button>
+     </div><br>
+     <div class="scroll col-sm-10">
+         <div *ngFor="let item of chatHistory ">
+             <span><strong>{{item.user}} : </strong> {{item.message}}</span><br>
+             {{item.created}}<br>
+             </div>
+     </div>-->
+     
+</div>

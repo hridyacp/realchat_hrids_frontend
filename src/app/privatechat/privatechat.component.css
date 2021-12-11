@@ -1,0 +1,120 @@
+.chats{
+    background-image: url('../../assets/images/chatroom.jpg');
+    height:100vh;
+    position: relative;
+    background-size: cover;
+}
+.mybuttons{
+    position: absolute;
+color:rgb(36, 36, 54);
+width:30%;
+top:30%;
+left:2%;
+font-size:50px;
+font-weight:bold;
+border-radius: 12px;
+}
+.mybuttons1{
+    position: absolute;
+color:rgb(36, 36, 54);
+width:30%;
+top:30%;
+
+font-size:50px;
+font-weight:bold;
+border-radius: 12px;
+}
+.mybuttons2{
+    position: absolute;
+color:rgb(36, 36, 54);
+width:30%;
+top:70%;
+
+font-size:50px;
+font-weight:bold;
+border-radius: 12px;
+}
+.mybuttons:hover {
+    background-color:rgb(45, 45, 66); /* Green */
+    color: white;
+  }
+  .mybuttons1:hover {
+    background-color:rgb(45, 45, 66); /* Green */
+    color: white;
+  }
+  .mybuttons2:hover {
+    background-color:rgb(45, 45, 66); /* Green */
+    color: white;
+  }
+ ul{
+     list-style: none;
+     font-size: larger;
+ }
+ .dot {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(83, 83, 83);
+    border-radius: 50%;
+    display: inline-block;
+  }
+ .chater{
+   border:2px solid blue;
+   height: 100%;
+ }
+ .massege-wrapper{
+	height: 100%;
+}
+ .massege-container{
+	height: 80%;
+}
+.message-typer{
+	height: 20%;
+}
+
+.sub-heading{
+	font-size: 20px;
+	color: rgba(0, 123, 255);
+}
+
+.message-thread {
+	overflow-y: scroll;
+	list-style-type: none;
+	height: 100%;
+	min-height: 300px;
+	width: 100%;
+	border: solid 1px #BDBDBD;
+	margin: 0px !important;
+	padding: 5px !important;
+}
+.start-chatting-banner {
+	padding-top: 25%!important;
+	text-align: center;
+}
+
+.message-thread li {
+	clear: both;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 20px 10px 0px 20px;
+	float: left;
+	margin-right: 20px;
+	padding: 25px 34px;
+	min-width: 160px;
+	min-height: 10px;
+	max-width: 350px;
+	border-radius: 5px;
+	border:solid 1px #007bff;
+	line-height: 1.4;
+	word-wrap: break-word;
+	color: #444444;
+	text-align: left;
+	background-color: rgba(0, 123, 255, 0.07);
+}
+.align-right {
+	float: right !important;
+	text-align: right;
+}
+
+.message-typer {
+	padding-top: 20px;
+}
